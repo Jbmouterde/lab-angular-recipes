@@ -1,0 +1,22 @@
+<h2> Details Recipe </h2>
+
+<h3> {{dish?.name}}</h3>
+<p> by {{dish?.description}}</p>
+<p> by {{dish?.ingredients}}</p>
+
+<img *ngIf="dish?.image" [src]='dish?.image'/>
+
+
+<p> List of ingredients </p>
+<ul> 
+  <li *ngFor="let oneIng of ingredients">
+    <h3> {{oneIng.name}}</h3>
+    <!-- <p>{{oneDish.description}} </p> -->
+    <img src="{{oneIng.image}}" > 
+    
+      <input [(ngModel)]="value" type="number" placeholder="...">
+   
+    <button (click)="addIngredient(oneIng._id)"> Add </button>
+  
+  </li>
+</ul>
